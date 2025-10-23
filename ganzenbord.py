@@ -8,6 +8,7 @@ import pygame # importeert de pygame module voor het maken van een GUI
 
 # --------------- Globale variabelen ---------------
 
+
 pion_posities = [0, 0] #pion posities (index is speler nummer, waarde is vakje nummer)
 
 #wie is er aan de beurt? (0 is speler 0, 1 is speler 1)
@@ -169,23 +170,23 @@ while not done:
 
                 beweeg_pion(beurt, worp) #verplaatst de pion van de speler die aan de beurt is
 
-                vak = pion_posities[speler]
+                vak = pion_posities[beurt]
 
-                if vak == [545, 683]:
-                    pion_posities[speler] = [937, 549]
+                if vak == 6:
+                    pion_posities[beurt] = 12
                     speciale_tekst = "Beland op vak 6, je mag naar vak 12!"
 
-                elif vak == [536, 587]:
-                    pion_posities[speler] = [104, 174]
+                elif vak == 42:
+                    pion_posities[beurt] = 30
                     speciale_tekst = "Beland op vak 42, helaas, terug naar vak 30."
 
-                elif vak == [737, 160]:
+                elif vak == 52:
                     speciale_tekst = "Beland op vak 52, je zit in de gevangenis dus je beurt wordt overgeslagen."
                     beurt = beurt_doorgeven(beurt)
 
                 if pion_posities[beurt] == 63: #als de speler op vakje 63 komt
                     winnaar = beurt #deze speler is de winnaar
-                elif vak in [[944, 220], [142, 129], [877, 402], [83, 435]]:
+                elif vak in [11, 25, 39, 45, 57]:
                     speciale_tekst = "Beland op gansvakje, je mag nog een keer gooien!"
                     oude_beurt = beurt
                 else: #als de speler niet op vakje 63 komt
