@@ -58,6 +58,9 @@ dobbelsteen_afbeeldingen = [
     pygame.image.load("dice6.png")
 ]
 
+pion1 = pygame.image.load("pion1.png")
+pion2 = pygame.image.load("pion2.png")
+
 window_size = [1200, 800] #afmetingen van het spelscherm instellen
 screen = pygame.display.set_mode(window_size) #spelscherm maken met de juiste afmetingen in "screen"
 
@@ -100,11 +103,11 @@ def update_screen(situatie): #functie: scherm updaten
     speler0_x = vakjes[pion_posities[0]][0] #x coordinaat van speler 0
     speler0_y = vakjes[pion_posities[0]][1] #y coordinaat van speler 0
     kleur_speler0 = (255, 0, 0) #kleur van speler 0 (rood)
-    pygame.draw.circle(screen, kleur_speler0, (speler0_x, speler0_y), 10) #tekent pion van speler 0
+    screen.blit(pion1, (speler0_x, speler0_y))  #tekent pion van speler 0
     speler1_x = vakjes[pion_posities[1]][0] +5 #x coordinaat van speler 1
     speler1_y = vakjes[pion_posities[1]][1] +5 #y coordinaat van speler 1
     kleur_speler1 = (0, 0, 255) #kleur van speler 1 (blauw)
-    pygame.draw.circle(screen, kleur_speler1, (speler1_x, speler1_y), 10) #tekent pion van speler 1 
+    screen.blit(pion2, (speler1_x, speler1_y)) #tekent pion van speler 1 
 
     myfont = pygame.font.SysFont(None, 30) #maakt een font object aan voor de tekst
 
